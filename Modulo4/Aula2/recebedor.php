@@ -2,11 +2,12 @@
 $nome = filter_input(INPUT_POST, 'nome');
 $idade = filter_input(INPUT_POST, 'idade');
 
-if($nome) {
+if($nome && $idade) {
 
     echo 'NOME: '.$nome."<br/>";
     echo 'IDADE: '.$idade;
 
 } else {
-    echo 'NÃO ENVIOU !';
+    header("Location: index.php");
+    exit;
 }
